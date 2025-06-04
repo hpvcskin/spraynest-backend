@@ -50,3 +50,6 @@ async def create_token(data: TokenData):
         return {"error": f"Command failed: {e.cmd}\n{e.output}"}
     except Exception as e:
         return {"error": str(e)}
+@app.get("/")
+def root():
+    return {"message": "SprayNest backend is running."}
